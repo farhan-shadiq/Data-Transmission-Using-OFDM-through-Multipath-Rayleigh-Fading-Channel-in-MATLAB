@@ -2,6 +2,7 @@
 In this project, we simulated a wireless data transmission system in MATLAB that can transmit text, audio and image data using Orthogonal Frequency Division Multiplexing (OFDM) through a multipath Rayleigh fading channel. For modulation, 16-QAM (Quadrature Amplitude Modulation) was used. Convolutional Coding was used for error correction coding and Viterbi algorithm was used for error correction decoding.
 
   * [Features](#features)
+  * [Parameters](#parameters)
   * [Requirements](#requirements)
   * [Usage](#usage)
   * [Code Overview](#code-overview)
@@ -18,6 +19,39 @@ In this project, we simulated a wireless data transmission system in MATLAB that
 - **Demodulation and Decoding**: Recovers the original bit stream using demodulation and Viterbi decoding.
 - **Data Reconstruction**: Reconstructs the original file type (image, text, or audio) from the decoded bit stream.
 - **BER Calculation**: Calculates and displays the Bit Error Rate (BER) to evaluate transmission accuracy.
+
+
+## Parameters
+
+### Input Parameters
+
+- **data_file**: File name of the input data (`image.png`, `text.txt`, or `audio.mp3`).
+
+### Encoding: Convolutional Coding
+
+- **trellis**: Trellis structure for convolutional encoding, defined as `poly2trellis(3, [6 7])`.
+- **M**: Modulation order for QAM (set to 16 for 16-QAM).
+
+### OFDM Transmission
+
+- **EbN0dB**: Signal-to-noise ratio per bit in decibels (dB) (default value: 5 dB).
+- **N**: Number of subcarriers in OFDM (FFT size, set to 64).
+- **Nsd**: Number of data subcarriers (set to 52).
+- **OFDM_BW**: Bandwidth of the OFDM system (set to 40 MHz).
+- **Tfft**: FFT period, derived from the subcarrier spacing.
+- **Tgi**: Guard interval (cyclic prefix duration), set to 1/4 of the FFT period.
+- **Tsignal**: Total OFDM symbol duration (FFT period plus guard interval).
+- **Ncp**: Number of cyclic prefix samples.
+- **Nst**: Total number of used subcarriers.
+- **nBitsPerSym**: Number of bits per OFDM symbol, set to equal `Nst`.
+
+### Channel Model: Multipath Rayleigh Fading Channel
+
+- **nTap**: Number of taps for the multipath Rayleigh fading channel (set to 2).
+
+### Decoding: Viterbi Algorithm
+
+- **tb**: Traceback depth for Viterbi decoding (set to 4).
 
 ## Requirements
 
