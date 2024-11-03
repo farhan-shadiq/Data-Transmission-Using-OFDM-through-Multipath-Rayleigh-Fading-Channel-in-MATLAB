@@ -31,7 +31,7 @@ In this project, we simulated a wireless data transmission system in MATLAB that
 1. **Prepare an Input File**:
     - Place an input file (`image.png`, `text.txt`, or `audio.mp3`) in the same directory as the script.
 2. **Run the Script**:
-    - Execute the script in MATLAB to process the input file, transmit it through an OFDM system, and reconstruct the output.
+    - Execute the script `main.m` in MATLAB to process the input file, transmit it through an OFDM system, and reconstruct the output.
 3. **Output**:
     - Based on the file type, the script displays the following:
         - **Image**: Displays the reconstructed image.
